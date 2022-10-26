@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Email server configuration
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'leroyleowdev@gmail.com'
+EMAIL_HOST_PASSWORD = 'xyazrvptfkqycrwt' # Go to https://myaccount.google.com/ set to security. Remember turn on 2FA to App Password
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 # Application definition
 
