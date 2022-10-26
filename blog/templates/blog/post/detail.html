@@ -1,14 +1,43 @@
 {% extends "blog/base.html" %}
 {% block title %}{{post.title}}{% endblock %}
 {% block content %}
-<h1>{{post.title}}</h1>
-<p class="date">
-    Published {{post.publish}} by {{post.author}}
-</p>
-{{ post.body|linebreaks }}
-<p>
-<a href="{% url "blog:post_share" post.id %}">
-  Share this post
-</a>
-</p>
+<div class="col-md-8 col-md-offset-2 col-xs-12">
+			<div class="mainheading">
+
+				<!-- Begin Top Meta -->
+				<div class="row post-top-meta">
+					<div class="col-md-2">
+						<a href="author.html"><img class="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"></a>
+					</div>
+					<div class="col-md-10">
+						<a class="link-dark" href="author.html">{{post.author}}</a><a href="#" class="btn follow">Follow</a>
+						<span class="author-description">Founder of WowThemes.net and creator of <b>"Mediumish"</b> theme that you're currently previewing. Developing professional premium themes, templates, plugins, scripts since 2012.</span>
+						<span class="post-date">{{post.publish}}</span><span class="dot"></span><span class="post-read">6 min read</span>
+					</div>
+				</div>
+				<!-- End Top Menta -->
+
+				<h1 class="posttitle">{{post.title}}</h1>
+                <!-- Begin Featured Image -->
+                <img class="featured-image img-fluid" src="assets/img/demopic/10.jpg" alt="">
+                <!-- End Featured Image -->
+
+                <!-- Begin Post Content -->
+			    <div class="article-post">
+                    {{post.body|linebreaks}}
+                </div>
+                <!-- Begin Tags -->
+                <div class="after-post-tags">
+                    <ul class="tags">
+                        <li><a href="#">Design</a></li>
+                        <li><a href="#">Growth Mindset</a></li>
+                        <li><a href="#">Productivity</a></li>
+                        <li><a href="#">Personal Growth</a></li>
+                    </ul>
+                </div>
+                <!-- End Tags -->
+                <a href="{% url "blog:post_share" post.id %}">
+                  Share this post
+                </a>
+			</div>
 {% endblock %}
